@@ -17,7 +17,6 @@ public class Customer {
 
     @PostPersist
     public void onPostPersist(){
-
         CustomerRegistered customerRegistered = new CustomerRegistered();
         BeanUtils.copyProperties(this, customerRegistered);
         customerRegistered.publishAfterCommit();
